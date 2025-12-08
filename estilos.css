@@ -41,6 +41,25 @@ body {
     letter-spacing: 1px;
 }
 
+.nav-links {
+    display: flex;
+    gap: 15px; /* Espacio entre los botones de navegación */
+}
+
+.nav-btn {
+    color: var(--texto);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--borde);
+    color: #fff;
+}
+
+
 /* --- SECCIÓN HERO (Principal) --- */
 .hero {
     display: flex;
@@ -48,11 +67,14 @@ body {
     justify-content: space-between;
     padding: 80px 10%;
     gap: 50px;
-    min-height: 80vh; /* Ocupa casi toda la pantalla */
+    min-height: 80vh;
+    background-color: var(--fondo); 
+    position: relative; /* CRUCIAL: Necesario para que z-index funcione */
+    z-index: 1; /* Por encima de las partículas (-1) */
 }
 
 .hero-content {
-    flex: 1; /* Toma la mitad del espacio */
+    flex: 1;
     max-width: 600px;
 }
 
@@ -69,7 +91,6 @@ body {
     font-size: 1.2rem;
     color: #aaaaaa;
     margin-bottom: 40px;
-    background-color: var(--fondo);
 }
 
 .btn-descarga {
@@ -87,7 +108,7 @@ body {
 
 .btn-descarga:hover {
     background-color: var(--azul-hover);
-    transform: translateY(-3px); /* Se levanta un poco */
+    transform: translateY(-3px);
     box-shadow: 0 0 25px rgba(59, 142, 208, 0.6);
 }
 
@@ -98,7 +119,6 @@ body {
     color: #666;
 }
 
-/* Imagen de la App con Efecto 3D */
 .hero-image {
     flex: 1;
     display: flex;
@@ -110,7 +130,7 @@ body {
     max-width: 600px;
     border-radius: 12px;
     border: 1px solid #333;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Sombra fuerte */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
     transition: transform 0.5s ease;
 }
@@ -123,9 +143,11 @@ body {
 .features {
     padding: 80px 10%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    background-color: #0f0f0f; /* Un poco más oscuro */
+    background-color: var(--fondo); /* Fondo sólido para bloquear partículas */
+    position: relative;
+    z-index: 1;
 }
 
 .card {
@@ -134,6 +156,8 @@ body {
     border-radius: 12px;
     border: 1px solid var(--borde);
     transition: transform 0.3s;
+    position: relative; /* Asegura que la tarjeta esté sobre la sección */
+    z-index: 2; 
 }
 
 .card:hover {
@@ -163,6 +187,9 @@ footer {
     color: #555;
     font-size: 0.9rem;
     border-top: 1px solid var(--borde);
+    background-color: var(--fondo);
+    position: relative; 
+    z-index: 1;
 }
 
 /* --- MÓVIL (Responsivo) --- */
@@ -176,7 +203,7 @@ footer {
     .hero h1 { font-size: 2.5rem; }
     
     .screenshot {
-        transform: none; /* Quitamos el efecto 3D en celular */
+        transform: none;
         margin-top: 30px;
     }
 }
@@ -187,6 +214,8 @@ footer {
     padding: 80px 10%;
     text-align: center;
     background-color: var(--fondo);
+    position: relative; 
+    z-index: 1;
 }
 
 .galeria-capturas h2 {
@@ -197,7 +226,8 @@ footer {
 
 .contenedor-galeria{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300xp, 1fr));
+    /* CORRECCIÓN: 300xp cambiado a 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -212,6 +242,8 @@ footer {
     border: 3px solid var(--borde);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .galeria-img:hover{
@@ -227,12 +259,13 @@ footer {
 }
 
 
-
 /* SECCION DE COLABORADORES */
 .team-section {
     padding: 80px 10%;
     text-align: center;
     background-color: #1a1a1a;
+    position: relative; 
+    z-index: 1;
 }
 
 .team-section h2 {
@@ -256,6 +289,8 @@ footer {
     border: 1px solid var(--borde);
     text-align: center;
     transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .collaborator-card:hover {
@@ -266,7 +301,7 @@ footer {
 .colaborator-img {
     width: 150px; 
     height: 150px;
-    border-radius: 50%; /* La clave para la forma circular */
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
     border: 4px solid var(--azul);
@@ -291,14 +326,7 @@ footer {
     width: 100%;
     height: 100%;
     
-    
     z-index: -1; 
     
     background-color: var(--fondo); 
-}
-
-
-.navbar, .hero, .features, .galeria-capturas, footer {
-    position: relative; 
-    z-index: 1; 
 }
