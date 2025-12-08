@@ -48,7 +48,7 @@ body {
     justify-content: space-between;
     padding: 80px 10%;
     gap: 50px;
-    min-height: 80vh; /* Ocupa casi toda la pantalla */
+    min-height: 80vh; 
 }
 
 .hero-content {
@@ -63,6 +63,8 @@ body {
     background: linear-gradient(to right, #fff, #aaa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-color: var(--fondo);
+
 }
 
 .hero p {
@@ -110,7 +112,7 @@ body {
     max-width: 600px;
     border-radius: 12px;
     border: 1px solid #333;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Sombra fuerte */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
     transition: transform 0.5s ease;
 }
@@ -142,7 +144,7 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--azul);
+    border-color: var(--fondo);
 }
 
 .icon {
@@ -180,7 +182,7 @@ footer {
     .hero h1 { font-size: 2.5rem; }
     
     .screenshot {
-        transform: none; /* Quitamos el efecto 3D en celular */
+        transform: none; 
         margin-top: 30px;
     }
 }
@@ -205,6 +207,7 @@ footer {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--fondo);
 
 }
 
@@ -220,7 +223,7 @@ footer {
 
 .galeria-img:hover{
     transform: scale(1.03); 
-    border-color: var(--azul);
+    border-color: var(--fondo);
 }
 
 @media (max-width: 768px) {
@@ -264,7 +267,7 @@ footer {
 
 .collaborator-card:hover {
     transform: translateY(-5px);
-    border-color: var(--azul);
+    border-color: var(--fondo);
 }
 
 .colaborator-img {
@@ -296,7 +299,7 @@ footer {
     height: 100%;
     
     
-    z-index: -1; 
+    z-index: 1; 
     
     background-color: var(--fondo); 
 }
