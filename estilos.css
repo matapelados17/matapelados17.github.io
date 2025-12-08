@@ -216,7 +216,7 @@ footer {
 .galeria-capturas{
     padding: 80px 10%;
     text-align: center;
-    /* Fondo semitransparente para que se vean las partículas */
+    /* Fondo semitransparente */
     background-color: rgba(18, 18, 18, 0.9);
     position: relative; 
     z-index: 1;
@@ -229,18 +229,20 @@ footer {
 }
 
 .contenedor-galeria{
-    /* Usamos Flexbox para mantener una fila horizontal */
+    /* CLAVE: Usamos Flexbox para mantener una fila horizontal */
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 100%; 
-    margin: 0 auto;
+    
+    /* Permite que si las imágenes exceden el ancho, el usuario pueda hacer scroll horizontalmente */
+    overflow-x: auto; 
+    padding-bottom: 20px; /* Espacio para el scrollbar */
 }
 
 .galeria-img{
-    /* Las imágenes se hacen más grandes y se ajustan */
-    width: 100%;
-    max-width: 450px; 
+    /* Fija el tamaño de cada imagen para que se vean grandes y en fila */
+    width: 450px; 
+    min-width: 350px; /* Asegura que no se hagan muy pequeñas */
     height: auto;
     object-fit: cover;
     border-radius: 8px;
