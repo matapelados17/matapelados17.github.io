@@ -228,16 +228,17 @@ footer {
 }
 
 .contenedor-galeria{
-display: flex;
-    justify-content: center;
-    gap: 20px; /* Espacio entre las imágenes */
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .galeria-img{
-    width: 100%;
-    max-width: 350px; /* Ancho máximo para cada captura */
+width: 100%; 
     height: auto;
+    object-fit: cover; 
     border-radius: 8px;
     border: 3px solid var(--borde);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
