@@ -216,7 +216,6 @@ footer {
 .galeria-capturas{
     padding: 80px 10%;
     text-align: center;
-    /* Fondo semitransparente */
     background-color: rgba(18, 18, 18, 0.9);
     position: relative; 
     z-index: 1;
@@ -229,33 +228,34 @@ footer {
 }
 
 .contenedor-galeria{
-    /* CLAVE: Usamos Flexbox para mantener una fila horizontal */
-    display: flex;
+display: flex;
     justify-content: center;
-    gap: 30px;
-    
-    /* Permite que si las imágenes exceden el ancho, el usuario pueda hacer scroll horizontalmente */
-    overflow-x: auto; 
-    padding-bottom: 20px; /* Espacio para el scrollbar */
+    gap: 20px; /* Espacio entre las imágenes */
+    flex-wrap: wrap;
 }
 
 .galeria-img{
-    /* Fija el tamaño de cada imagen para que se vean grandes y en fila */
-    width: 450px; 
-    min-width: 350px; /* Asegura que no se hagan muy pequeñas */
+    width: 100%;
+    max-width: 350px; /* Ancho máximo para cada captura */
     height: auto;
-    object-fit: cover;
     border-radius: 8px;
     border: 3px solid var(--borde);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
-    position: relative;
-    z-index: 2;
 }
 
 .galeria-img:hover{
     transform: scale(1.03); 
     border-color: var(--azul);
+
+}
+
+/* Ajustes Responsivos para la galería */
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column; /* Apila las imágenes verticalmente en celular */
+        align-items: center;
+    }
 }
 
 
