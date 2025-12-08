@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    <div id="tsparticles"></div>
+
     <nav class="navbar">
         <div class="logo">MathPro v1.1</div>
 
@@ -78,6 +80,60 @@
     <footer>
         <p>&copy; 2025 Desarrollado como proyecto de la clase (Algebra Lineal) con Python y mucha sangre, sudor y lagrimas.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script>
+        // Configuración de las partículas
+        tsParticles.load('tsparticles', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#e0e0e0"
+                },
+                shape: {
+                    type: "circle"
+                },
+                size: {
+                    value: 3
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#333333",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out"
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>

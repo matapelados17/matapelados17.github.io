@@ -16,7 +16,6 @@
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: var(--fondo);
     color: var(--texto);
     line-height: 1.6;
 }
@@ -281,4 +280,25 @@ footer {
 .collaborator-card p {
     color: #aaa;
     font-size: 0.9rem;
+}
+
+
+/* FONDO DE PARTÍCULAS EN MOVIMIENTO */
+#tsparticles {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    
+    z-index: -1; 
+    
+    background-color: var(--fondo); 
+}
+
+
+.navbar, .hero, .features, .galeria-capturas, footer {
+    position: relative; 
+    z-index: 1; 
 }
