@@ -43,7 +43,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 15px; /* Espacio entre los botones de navegación */
+    gap: 15px;
 }
 
 .nav-btn {
@@ -157,7 +157,7 @@ body {
     border: 1px solid var(--borde);
     transition: transform 0.3s;
     position: relative; 
-    z-index: 2; /* Más alto que la sección para asegurar visibilidad */
+    z-index: 2; 
 }
 
 .card:hover {
@@ -209,7 +209,7 @@ footer {
 }
 
 
-/*Configuracion de la galeria de imagenes*/
+/* --- Configuración de la Galería de Imágenes --- */
 .galeria-capturas{
     padding: 80px 10%;
     text-align: center;
@@ -225,17 +225,19 @@ footer {
 }
 
 .contenedor-galeria{
-    display: grid;
-    /* CORRECCIÓN: 300xp cambiado a 300px */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    /* CAMBIO CLAVE: Usamos Flexbox para fila horizontal y scroll */
+    display: flex;
+    justify-content: center;
     gap: 30px;
-    max-width: 1200px;
+    max-width: 100%; 
     margin: 0 auto;
-
+    /* Esto permite que se desborde horizontalmente si las imágenes son muy grandes */
 }
 
 .galeria-img{
+    /* Las imágenes ocupan un ancho fijo grande para verse bien */
     width: 100%;
+    max-width: 450px; /* Tamaño grande para cada captura */
     height: auto;
     object-fit: cover;
     border-radius: 8px;
@@ -251,12 +253,7 @@ footer {
     border-color: var(--azul);
 }
 
-@media (max-width: 768px) {
-    .gallery-container {
-        flex-direction: column; 
-        align-items: center;
-    }
-}
+/* La regla para móviles ya no es necesaria con flex */
 
 
 /* SECCION DE COLABORADORES */
