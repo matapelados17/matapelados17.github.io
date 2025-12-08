@@ -69,8 +69,8 @@ body {
     gap: 50px;
     min-height: 80vh;
     background-color: var(--fondo); 
-    position: relative; /* CRUCIAL: Necesario para que z-index funcione */
-    z-index: 1; /* Por encima de las partículas (-1) */
+    position: relative; 
+    z-index: 1; 
 }
 
 .hero-content {
@@ -145,7 +145,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    background-color: var(--fondo); /* Fondo sólido para bloquear partículas */
+    background-color: var(--fondo); 
     position: relative;
     z-index: 1;
 }
@@ -156,8 +156,8 @@ body {
     border-radius: 12px;
     border: 1px solid var(--borde);
     transition: transform 0.3s;
-    position: relative; /* Asegura que la tarjeta esté sobre la sección */
-    z-index: 2; 
+    position: relative; 
+    z-index: 2; /* Más alto que la sección para asegurar visibilidad */
 }
 
 .card:hover {
